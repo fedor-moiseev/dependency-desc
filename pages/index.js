@@ -36,13 +36,7 @@ export default function Home() {
       {error && (
         <div className="flash mb-3 mt-3 flash-error">{String(error)}</div>
       )}
-      <form
-        className="mb-3"
-        onSubmit={(e) => {
-          e.preventDefault();
-          search();
-        }}
-      >
+      <form className="mb-3">
         <div className="form-group">
           <div className="form-group-header">
             <label for="repo">repo</label>
@@ -77,7 +71,8 @@ export default function Home() {
 
         <button
           className="btn btn-primary"
-          type="submit"
+          type="button"
+          onClick={() => search()}
           aria-label="Copy to clipboard"
         >
           Search
